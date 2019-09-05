@@ -39,12 +39,15 @@ const Index = (props) => (
 //Component Life Cycle
 Index.getInitialProps = async function() {
 	const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
+	
+	const statusCode = res ? res.statusCode : err ? err.statusCode : null
+	const errorCode = res.statusCode > 200 ? res.statusCode : false
 	const data = await res.json()
 
 	console.log(`Show data fetched. Count: ${data.length}`)
 
 	return {
-		shows: data.map(entry => entry.show)
+		statusCode, errorCode, shows: data.map(entry => entry.show)
 	}
 }
 

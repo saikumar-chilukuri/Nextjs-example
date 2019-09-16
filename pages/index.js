@@ -3,6 +3,7 @@ import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
 import Head from 'next/head'
 
+
 //Custom <App>
 const Index = (props) => (	
 	<Layout>
@@ -36,7 +37,8 @@ const Index = (props) => (
 	    `}</style>
 	</Layout>
 )
-//Component Life Cycle
+//----------Component Life Cycle--------//
+//------Reusing the built in errors-----//
 Index.getInitialProps = async function() {
 	const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
 	

@@ -4,7 +4,7 @@
   "description": "This is a example of next.js in javascript used to display the server data to the client using the browser",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js",
+    "server": "node server.js",
     "build": "next build",
     "now-build": "next build",
     "start": "next start -p %PORT%"
